@@ -1,0 +1,45 @@
+.SubProfile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    text-align: center;
+    padding: 15px 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
+}
+.SubProfile img {
+    width: 200px;
+    height: 300px;
+}
+.SubProfile button {
+    margin-top: 11px;
+    width: 200px;
+    height: 30px;
+    background-color: rgb(237, 238, 240);
+    border-radius: 5px;
+    border: none;
+}
+button:hover {
+    cursor: pointer;
+    color: #626d7a;
+}
+
+.friends {
+    margin-top: 15px;
+    padding: 15px 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
+}
+.friends > a {
+    color: black;
+    text-decoration: none;
+}
+.friendsHeader {
+    display: flex;
+}
+.friendsHeaderCount {
+    padding: 0 6px;
+    color: #939393;
+}

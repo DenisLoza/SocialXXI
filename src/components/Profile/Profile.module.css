@@ -1,0 +1,50 @@
+.Profile {
+    margin-top: 15px;
+}
+.ProfileWrapp {
+    height: 235px;
+    width: 550px;
+    padding: 15px 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
+}
+h1 {
+    font-size: 19px;
+}
+.name {
+    margin: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.name span {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.hr {
+    border-top: 1px solid #e7e8ec;
+    margin: 6px 15px;
+}
+
+.aboutMe {
+    display: flex;
+    margin: 15px;
+}
+
+.aboutMe .categories {
+    width: 165px;
+    color: rgb(179, 202, 218);
+}
+.aboutMe .categoriesItem {
+    padding-top: 5px;
+}
+
+/*rgb(179,208,233)*/
+.aboutMe .descriptions {
+
+}
+.aboutMe .descriptionsItem {
+    padding-top: 5px;
+}

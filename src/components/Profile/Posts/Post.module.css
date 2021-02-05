@@ -1,0 +1,48 @@
+.Post {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    margin-top: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
+}
+
+.avatarHeader {
+    display: flex;
+}
+
+.avatarHeader img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.message {
+    padding: 10px 20px 20px;
+    border-left: 1px solid #b3cada;
+}
+
+.count {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    margin-top: 5px;
+    width: 50px;
+}
+
+.count img {
+    width: 20px;
+    height: 20px;
+}
+
+.count img:hover {
+    cursor: pointer;
+}
+
+.likesCount {
+    color: #e64646;
+    margin-left: 6px;
+    font-size: 14px;
+}

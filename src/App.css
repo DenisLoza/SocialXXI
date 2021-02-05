@@ -1,30 +1,41 @@
 .App {
-  display: flex;
-  flex-direction: column;
+    background-color: rgb(237, 238, 240);
 }
 
 .Header {
-  display: flex;
-  /* вертикальное центрирование  */
-  align-items: center; 
-  height: 56px;
-  background-color: aquamarine;
-  padding: 0 16px;
+    /*прилипшее верхнее меню НЕ скролится*/
+    width: 100%;
+    height: 48px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
 }
 
 .wrapper {
-  display: flex;
+    /*обертка для элементов Nav и Main*/
+    display: flex;
+    margin: 0 auto;
+    width: 960px;
 }
 
 .Nav {
-  background-color: darkgoldenrod;
-  min-height: 300px;
-  width: 20%;
+    height: 100vh;
+    width: 163px;
+    margin-top: 63px;
+    background-color: rgb(237, 238, 240);
 }
 
 .Main {
-  background-color: deepskyblue;
-  width: 80%;
+    width: 552px;
+    margin-top: 48px;
+    margin-right: 15px;
+}
+
+.SubMain {
+    width: 230px;
+    margin-top: 48px;
 }
 
 .item {

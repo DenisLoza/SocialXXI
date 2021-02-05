@@ -1,0 +1,29 @@
+.FriendsListModule {
+}
+
+.friendsListItem {
+    width: 200px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.friendsListItem img {
+    margin: 10px 5px 0 5px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.friendsListItem a {
+    color: #2a5885;
+    text-decoration: none;
+}
+
+.friendsListItem a:hover {
+    color: #2a5885;
+    text-decoration: underline;
+}

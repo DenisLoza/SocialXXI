@@ -1,0 +1,32 @@
+.Dialogs {
+    width: 450px;
+    text-align: center;
+}
+
+.Dialogs img {
+    height: 40px;
+}
+
+.post {
+    max-width: 150px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.post span {
+    color: wheat;
+}
+
+.col {
+    display: flex;
+    align-items: flex-end;
+}
+
+.col > div {
+    margin: 5px;
+}
+
+.time {
+    color: darkgrey;
+}
