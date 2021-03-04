@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./Profile.module.css"
 import {MyPosts} from "./Posts/MyPosts"
-import {addNewMyPostCallback} from "../../Store/State"
+import {store} from "../../Store/State"
 
 
 export function Profile() {
@@ -31,7 +31,7 @@ export function Profile() {
         </div>
         <div className={`${style.hr}`}> </div>
       </div>
-      <MyPosts addNewMyPostCallback={addNewMyPostCallback}/>
+      <MyPosts store={store} dispatch={store.dispatch.bind(store)}/>
     </div>
   )
 }

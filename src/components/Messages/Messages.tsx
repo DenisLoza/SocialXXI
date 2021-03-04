@@ -6,6 +6,7 @@ import searchIcon from "../img/icons/magnifying-glass.png"
 import {dialogsData, messagesData} from "../../Store/State"
 
 
+
 let messagesDataMap = messagesData.map(data =>
   <ChatsAll key={data.id}
             id={data.id}

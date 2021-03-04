@@ -31,7 +31,9 @@ export function SubProfile() {
               Friends
             </div>
             <div className={`${style.friendsHeaderCount}`}>
+
               {qf}
+
             </div>
           </div>
         </NavLink>

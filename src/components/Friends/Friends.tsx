@@ -1,13 +1,13 @@
 import React from "react"
 import style from "./Friends.module.css"
 import searchIcon from "../img/icons/magnifying-glass.png"
-import {friendsDataType} from "../../Store/State"
+import {friendDataType} from "../../Store/State"
 import {friendsData} from "../../Store/State"
 import {FriendsAll} from "./FriendsAll"
 
 
 // ф-ция подсчета кол-ва друзей
-export function quantityFriends(props: Array<friendsDataType>) {
+export function quantityFriends(props: Array<friendDataType>) {
   return props.length
 }
 

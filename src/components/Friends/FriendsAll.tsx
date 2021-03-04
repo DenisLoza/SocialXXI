@@ -1,10 +1,10 @@
 import style from "./FriendsAll.module.css"
 import {NavLink} from "react-router-dom"
 import React from "react"
-import {friendsDataType} from "../../Store/State"
+import {friendDataType} from "../../Store/State"
 
 
-export function FriendsAll(props: friendsDataType) {
+export function FriendsAll(props: friendDataType) {
 
   let path = "/friends/" + props.friendName
 

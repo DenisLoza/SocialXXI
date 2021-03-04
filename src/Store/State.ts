@@ -10,59 +10,93 @@ import girl_4 from "../components/img/avatars/girl_4.jpg"
 import {v1} from "uuid"
 
 
-
-// данные для компоненты Friends
-export type friendsDataType = {
-  id: string
-  friendName: string
-  avatarSrc?: any
-}
-export let friendsData: Array<friendsDataType> = [
-  {id: v1(), friendName: "Andrew", avatarSrc: man_1},
-  {id: v1(), friendName: "Alex", avatarSrc: man_2},
-  {id: v1(), friendName: "Nastya", avatarSrc: girl_1},
-  {id: v1(), friendName: "Nik", avatarSrc: man_4},
-  {id: v1(), friendName: "Anna", avatarSrc: girl_2},
-  {id: v1(), friendName: "Elena", avatarSrc: girl_4},
-  {id: v1(), friendName: "John", avatarSrc: man_3},
-  {id: v1(), friendName: "Elena", avatarSrc: girl_3},
-]
-
-
-// данные для компоненты Post
 export type postDataType = {
   id: string
   message: string
   likesCount: number
 }
-export let postData: Array<postDataType> = [
-  {id: v1(), message: "Hello!", likesCount: 11},
-  {id: v1(), message: "It's my first post!", likesCount: 33},
-  {id: v1(), message: "I like XXI net!", likesCount: 40},
-]
-export type addNewMyPostCallbackType = {
-  addNewMyPostCallback: (newMyPost: string) => void
-}
-export function addNewMyPostCallback(newMyPost: string) {
-  let newPost:postDataType  = {id: v1(), message: newMyPost, likesCount: 0}
-  postData.push(newPost)
-}
+type profileComponentType = { postData: Array<postDataType>, postTemplate: postDataType }
 
+export type friendDataType = {
+  id: string
+  friendName: string
+  avatarSrc?: any
+}
+type friendsComponentType = { friendsData: Array<friendDataType> }
 
-// данные для компоненты Messages
-export type messagesDataType = {
+export type messageDataType = {
   id: string
   friendName: string
   time: string
   avatarSrc: any
   lastMessage: string
 }
-export type dialogsDataType = {
-  id: string
-  name: string
-  time: string
-  message: string
+type messagesComponentType = { messagesData: Array<messageDataType> }
+
+type stateType = {
+  profileComponent: profileComponentType
+  friendsComponent: friendsComponentType
+  messagesComponent: messagesComponentType
 }
+
+export type storeType = {
+  _state: stateType
+  getState: () => stateType
+  dispatch: (action: addNewMyPostActionType) => void
+}
+
+
+export let store: storeType = {
+  _state: {
+    profileComponent: {
+      postData: [
+        {id: v1(), message: "Hello!", likesCount: 11},
+        {id: v1(), message: "It's my first post!", likesCount: 33},
+        {id: v1(), message: "I like XXI net!", likesCount: 40}
+      ],
+      postTemplate: {id: v1(), message: "", likesCount: 0}
+    },
+    friendsComponent: {
+      friendsData: [
+        {id: v1(), friendName: "Andrew", avatarSrc: man_1},
+        {id: v1(), friendName: "Alex", avatarSrc: man_2},
+        {id: v1(), friendName: "Nastya", avatarSrc: girl_1},
+        {id: v1(), friendName: "Nik", avatarSrc: man_4},
+        {id: v1(), friendName: "Anna", avatarSrc: girl_2},
+        {id: v1(), friendName: "Elena", avatarSrc: girl_4},
+        {id: v1(), friendName: "John", avatarSrc: man_3},
+        {id: v1(), friendName: "Elena", avatarSrc: girl_3}
+      ]
+    },
+    messagesComponent: {
+      messagesData: [
+        {id: v1(), friendName: "Denis", time: randomTime(), avatarSrc: man_5, lastMessage: "Hi, my friends!"},
+        {id: v1(), friendName: "Alex", time: randomTime(), avatarSrc: man_2, lastMessage: "Nice to meet you!"},
+        {id: v1(), friendName: "Nastya", time: randomTime(), avatarSrc: girl_1, lastMessage: "How are you, my friends?"}
+      ]
+    },
+  },
+  getState() {
+    return this._state
+  },
+  dispatch(action) {
+    if (action.type = "addNewMyPost") {
+      let newPost = {...this._state.profileComponent.postTemplate, message: action.newMyPost}
+      this._state.profileComponent.postData.push(newPost)
+    }
+  }
+}
+// ACTION CREATORS
+type addNewMyPostActionType = {type: "addNewMyPost", newMyPost: string}
+type addNewMyPostACType = (newPost: string) => addNewMyPostActionType
+export const addNewMyPostAC: addNewMyPostACType = (newPost: string) => {
+  return {
+    type: "addNewMyPost",
+    newMyPost: newPost
+  }
+}
+
+// FUNCTION  "WHAT TIME is it"
 // текущее реальное время формата (24h 00:00)
 function realTime() {
   let t = new Date()
@@ -80,15 +114,37 @@ function randomTime() {
   let rM = randMinutes >= 10 ? randMinutes : "0" + randMinutes
   return rH + ":" + rM
 }
-// данные для компоненты Messages
-export let messagesData: Array<messagesDataType> = [
+
+
+// OLD DATA
+export let friendsData: Array<friendDataType> = [
+  {id: v1(), friendName: "Andrew", avatarSrc: man_1},
+  {id: v1(), friendName: "Alex", avatarSrc: man_2},
+  {id: v1(), friendName: "Nastya", avatarSrc: girl_1},
+  {id: v1(), friendName: "Nik", avatarSrc: man_4},
+  {id: v1(), friendName: "Anna", avatarSrc: girl_2},
+  {id: v1(), friendName: "Elena", avatarSrc: girl_4},
+  {id: v1(), friendName: "John", avatarSrc: man_3},
+  {id: v1(), friendName: "Elena", avatarSrc: girl_3},
+]
+export let postData: Array<postDataType> = [
+  {id: v1(), message: "Hello!", likesCount: 11},
+  {id: v1(), message: "It's my first post!", likesCount: 33},
+  {id: v1(), message: "I like XXI net!", likesCount: 40},
+]
+export let messagesData: Array<messageDataType> = [
   {id: v1(), friendName: "Denis", time: randomTime(), avatarSrc: man_5, lastMessage: "Hi, my friends!"},
   {id: v1(), friendName: "Alex", time: randomTime(), avatarSrc: man_2, lastMessage: "Nice to meet you!"},
   {id: v1(), friendName: "Nastya", time: randomTime(), avatarSrc: girl_1, lastMessage: "How are you, my friends?"},
 ]
-// пока не используется
+export type dialogsDataType = {
+  id: string
+  name: string
+  time: string
+  message: string
+}
 export let dialogsData: Array<dialogsDataType> = [
   {id: v1(), name: "Denis", time: randomTime(), message: "Hi, my friends!"},
   {id: v1(), name: "Alex", time: randomTime(), message: "Nice to meet you!"},
-  {id: v1(), name: "Katy", time: randomTime(), message: "How are you, my friends?"},
+  {id: v1(), name: "Nastya", time: randomTime(), message: "How are you, my friends?"},
 ]

@@ -2,16 +2,23 @@ import React, {useState} from "react"
 import {Post} from "./Post"
 import style from "./MyPosts.module.css"
 import avatar_man from "../../img/avatars/man_5.jpg"
-import {addNewMyPostCallbackType, postData} from "../../../Store/State"
+import {addNewMyPostAC, storeType} from "../../../Store/State"
 
+type MyPostsType = {
+  store: storeType
+  dispatch: (action: any) => void
+}
 
-export function MyPosts(props: addNewMyPostCallbackType) {
+export function MyPosts(props: MyPostsType) {
 
   // Хук, следит за значением поля <input>
   let [valueInput, setValueInput] = useState("")
 
+  // возвращает state из глобального объекта Store
+  let state = props.store.getState()
+
   // MAP <Post> в переменную postDataMap
-  let postDataMap = postData.map(data =>
+  let postDataMap = state.profileComponent.postData.map(data =>
     <Post key={data.id}
           id={data.id}
           message={data.message}
@@ -28,7 +35,7 @@ export function MyPosts(props: addNewMyPostCallbackType) {
   const addMyPost = () => {
     // защита от добавления пустого поста
     if (valueInput.trim() !== "") {
-      props.addNewMyPostCallback(valueInput)
+      props.dispatch(addNewMyPostAC(valueInput))
       setValueInput("")
     }
   }

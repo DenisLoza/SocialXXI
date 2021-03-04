@@ -1,11 +1,11 @@
 import style from "./ChatsAll.module.css"
 import {NavLink} from "react-router-dom"
 import React from "react"
-import {messagesDataType} from "../../../Store/State"
+import {messageDataType} from "../../../Store/State"
 
 
 
-export function ChatsAll(props: messagesDataType) {
+export function ChatsAll(props: messageDataType) {
 
   let path = "/im/" + props.friendName
 
