@@ -2,7 +2,8 @@ import React, {useState} from "react"
 import {Post} from "./Post"
 import style from "./MyPosts.module.css"
 import avatar_man from "../../img/avatars/man_5.jpg"
-import {addNewMyPostAC, storeType} from "../../../Store/State"
+import {storeType} from "../../../Store/State"
+import {addNewMyPostAC} from "../../../Store/profileReducer"
 
 type MyPostsType = {
   store: storeType

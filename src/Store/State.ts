@@ -8,6 +8,7 @@ import girl_2 from "../components/img/avatars/girl_2.jpg"
 import girl_3 from "../components/img/avatars/girl_3.jpg"
 import girl_4 from "../components/img/avatars/girl_4.jpg"
 import {v1} from "uuid"
+import {addNewMyPostActionType, profileReducer} from "./profileReducer"
 
 
 export type postDataType = {
@@ -15,14 +16,14 @@ export type postDataType = {
   message: string
   likesCount: number
 }
-type profileComponentType = { postData: Array<postDataType>, postTemplate: postDataType }
+export type profileComponentType = { postData: Array<postDataType> }
 
 export type friendDataType = {
   id: string
   friendName: string
   avatarSrc?: any
 }
-type friendsComponentType = { friendsData: Array<friendDataType> }
+export type friendsComponentType = { friendsData: Array<friendDataType> }
 
 export type messageDataType = {
   id: string
@@ -31,7 +32,7 @@ export type messageDataType = {
   avatarSrc: any
   lastMessage: string
 }
-type messagesComponentType = { messagesData: Array<messageDataType> }
+export type messagesComponentType = { messagesData: Array<messageDataType> }
 
 type stateType = {
   profileComponent: profileComponentType
@@ -53,8 +54,7 @@ export let store: storeType = {
         {id: v1(), message: "Hello!", likesCount: 11},
         {id: v1(), message: "It's my first post!", likesCount: 33},
         {id: v1(), message: "I like XXI net!", likesCount: 40}
-      ],
-      postTemplate: {id: v1(), message: "", likesCount: 0}
+      ]
     },
     friendsComponent: {
       friendsData: [
@@ -80,19 +80,7 @@ export let store: storeType = {
     return this._state
   },
   dispatch(action) {
-    if (action.type = "addNewMyPost") {
-      let newPost = {...this._state.profileComponent.postTemplate, message: action.newMyPost}
-      this._state.profileComponent.postData.push(newPost)
-    }
-  }
-}
-// ACTION CREATORS
-type addNewMyPostActionType = {type: "addNewMyPost", newMyPost: string}
-type addNewMyPostACType = (newPost: string) => addNewMyPostActionType
-export const addNewMyPostAC: addNewMyPostACType = (newPost: string) => {
-  return {
-    type: "addNewMyPost",
-    newMyPost: newPost
+    this._state.profileComponent.postData = profileReducer(this._state.profileComponent.postData, action)
   }
 }
 
