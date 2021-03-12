@@ -1,10 +1,13 @@
 import {postDataType} from "./State"
 import {v1} from "uuid"
 
+// ACTION CONST
+const ADD_NEW_MY_POST = "addNewMyPost"
+
 
 export const profileReducer = (state: Array<postDataType>, action: addNewMyPostActionType): Array<postDataType> => {
   switch (action.type) {
-    case "addNewMyPost":
+    case ADD_NEW_MY_POST:
       let newPost: postDataType = {id: v1(), message: action.newMyPost, likesCount: 0}
       return [newPost, ...state]
   }
@@ -12,6 +15,6 @@ export const profileReducer = (state: Array<postDataType>, action: addNewMyPostA
 
 
 // ACTION CREATORS
-export type addNewMyPostActionType = {type: "addNewMyPost", newMyPost: string}
+export type addNewMyPostActionType = {type: typeof ADD_NEW_MY_POST, newMyPost: string}
 type addNewMyPostACType = (newPost: string) => addNewMyPostActionType
-export const addNewMyPostAC: addNewMyPostACType = (newPost: string) => ({type: "addNewMyPost", newMyPost: newPost})
+export const addNewMyPostAC: addNewMyPostACType = (newPost: string) => ({type: ADD_NEW_MY_POST, newMyPost: newPost})
