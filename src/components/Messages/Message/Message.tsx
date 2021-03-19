@@ -8,17 +8,12 @@ export function Message(props: messageDataType) {
 
   let path = "/dialog/" + props.friendName
 
-  const toDialogs = () => {
-
-  }
-
   return (
     <div className={`${style.Message}`}>
       <NavLink activeClassName={style.active}
                to={path}>
 
-        <div className={style.MessageItem}
-             onClick={toDialogs}>
+        <div className={style.MessageItem}>
 
           <div className={`${style.MessageAvatar}`}>
             <img src={props.avatarSrc} alt="avatar"/>

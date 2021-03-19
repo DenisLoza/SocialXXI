@@ -21,14 +21,15 @@
 }
 
 .Nav {
-    height: 100vh;
     width: 163px;
+    height: 100vh;
     padding-top: 63px;
     background-color: rgb(237, 238, 240);
 }
 
 .Main {
     width: 552px;
+    height: 100vh;
     margin-right: 15px;
     padding-top: 63px;
 }

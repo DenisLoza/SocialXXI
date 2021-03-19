@@ -1,9 +1,11 @@
-import React, {ChangeEvent, KeyboardEvent, useState} from "react"
+import React, {ChangeEvent, useState} from "react"
 import style from "./Dialogs.module.css"
 import avatar_man from "../../img/avatars/man_5.jpg"
 import {v1} from "uuid"
 import {messageDataType} from "../../../Store/State"
 import {Dialog} from "./Dialog"
+import {NavLink} from "react-router-dom"
+
 
 
 type DialogsType = {
@@ -26,9 +28,6 @@ export function Dialogs(props: DialogsType) {
     />
   )
 
-  const onClickHandlerBack = () => {
-
-  }
 
   const onChangeHandlerInput = (e: ChangeEvent<HTMLTextAreaElement>) => {
     // меняем стиль кнопки отправки сообщения
@@ -53,14 +52,14 @@ export function Dialogs(props: DialogsType) {
 
   return (
 
-    <div className={`${style.Dialogs_wrap}`}>
       <div className={`${style.Dialogs}`}>
         <div className={`${style.DialogsHeader}`}>
-          <div className={`${style.DialogsHeaderBack}`}
-               onClick={onClickHandlerBack}
-          >
-            Back
-          </div>
+          <NavLink to={"/im"}>
+            <div className={`${style.DialogsHeaderBack}`}>
+              Back
+            </div>
+          </NavLink>
+
           <div className={`${style.DialogsHeaderMain}`}>
             <div className={`${style.HeaderMainUserName}`}>Denis</div>
             <div className={`${style.HeaderMainLastSeen}`}>last seen</div>
@@ -93,6 +92,5 @@ export function Dialogs(props: DialogsType) {
           ></div>
         </div>
       </div>
-    </div>
   )
 }
