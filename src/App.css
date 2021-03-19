@@ -14,7 +14,7 @@
 }
 
 .wrapper {
-    /*обертка для элементов Nav и Main*/
+    /* обертка для элементов Nav, Main, SubMain */
     display: flex;
     margin: 0 auto;
     width: 960px;
@@ -23,19 +23,19 @@
 .Nav {
     height: 100vh;
     width: 163px;
-    margin-top: 63px;
+    padding-top: 63px;
     background-color: rgb(237, 238, 240);
 }
 
 .Main {
     width: 552px;
-    margin-top: 48px;
     margin-right: 15px;
+    padding-top: 63px;
 }
 
 .SubMain {
     width: 230px;
-    margin-top: 48px;
+    padding-top: 63px;
 }
 
 .item {

@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import {Post} from "./Post"
+import React, {KeyboardEvent, useState} from "react"
+import {Post} from "./Post/Post"
 import style from "./MyPosts.module.css"
 import avatar_man from "../../img/avatars/man_5.jpg"
 import {storeType} from "../../../Store/State"
@@ -40,6 +40,11 @@ export function MyPosts(props: MyPostsType) {
       setValueInput("")
     }
   }
+  const onKeyDownHandlerInput = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      addMyPost()
+    }
+  }
 
 
   return (
@@ -53,11 +58,13 @@ export function MyPosts(props: MyPostsType) {
                  placeholder={"What's new?"}
                  onChange={onChangeInputHandler}
                  value={valueInput}
+                 onKeyDown={onKeyDownHandlerInput}
           >
           </input>
         </div>
         <div>
-          <button onClick={addMyPost}>Post</button>
+          <button onClick={addMyPost}
+          >Post</button>
         </div>
       </div>
       <div className={style.postDataMap}>

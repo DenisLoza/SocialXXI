@@ -1,9 +1,8 @@
 import React, {useState} from "react"
 import style from "./Friends.module.css"
-import searchIcon from "../img/icons/magnifying-glass.png"
 import {friendDataType} from "../../Store/State"
 import {friendsData} from "../../Store/State"
-import {FriendsAll} from "./FriendsAll"
+import {Friend} from "./Friend/Friend"
 import {Search} from "../../Functions/Search"
 
 
@@ -27,22 +26,19 @@ export function Friends() {
 
 
   let friendsDataMap = friends.map(data =>
-    <FriendsAll key={data.id}
-                id={data.id}
-                friendName={data.friendName}
-                avatarSrc={data.avatarSrc}
+    <Friend key={data.id}
+            id={data.id}
+            friendName={data.friendName}
+            avatarSrc={data.avatarSrc}
     />
   )
 
   return (
     <div className={`${style.Friends}`}>
-      <div className={`${style.search}`}>
-        <div className={`${style.searchWindow}`}>
-          <img src={searchIcon} alt="icon"/>
-          <Search onSearch={onSearch}/>
-        </div>
-      </div>
+      <Search onSearch={onSearch}/>
+
       {friendsDataMap}
+
     </div>
   )
 }

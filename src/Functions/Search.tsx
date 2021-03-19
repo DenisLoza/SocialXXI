@@ -1,4 +1,7 @@
 import React, {ChangeEvent, useState} from "react"
+import style from "./Search.module.css"
+import searchIcon from "../components/img/icons/magnifying-glass.png"
+
 
 
 type searchType = {
@@ -15,11 +18,12 @@ export function Search(props: searchType) {
     props.onSearch(value)
   }
 
-  return <>
+  return <div className={`${style.Search}`}>
+    <img className={`${style.imgSearch}`} src={searchIcon} alt="icon"/>
     <input type="text"
-           className="search"
+           className={`${style.inputSearch}`}
            placeholder="Search"
            value={value}
            onChange={onValueSearch}/>
-  </>
+  </div>
 }

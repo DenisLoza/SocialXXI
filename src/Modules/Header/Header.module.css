@@ -20,30 +20,27 @@
     margin-top: 12px;
 }
 
-.search {
+.search_wrap {
     width: 552px;
     height: 48px;
     display: flex;
     align-items: center;
 }
-
-.search .searchWindow {
-    padding-left: 5px;
+.search_wrap img {
+    width: 30px;
+    height: 30px;
+    padding: 7px;
     background-color: rgb(237, 238, 240);
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
-
-.search img {
-    width: 16px;
-    vertical-align: middle;
-}
-
-.search input {
+.search_wrap input {
     width: 200px;
     height: 30px;
     padding-left: 10px;
     background-color: rgb(237, 238, 240);
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
     border: none;
 }
 

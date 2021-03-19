@@ -1,7 +1,7 @@
 import React from "react"
 import style from "./FriendsListModule.module.css"
 import {NavLink} from "react-router-dom"
-import {friendsData} from "../../../Store/State"
+import {friendsData} from "../../../../Store/State"
 
 
 // отбираем первые шесть элементов массива FriendsData
@@ -16,7 +16,7 @@ function sixFriendsDataF() {
 let sixFriendsData = sixFriendsDataF()
 
 let mapFriendsData = sixFriendsData.map(data =>
-  <>
+  <div key={data.id}>
     <NavLink activeClassName={style.active}
              to={"/friends/" + data.friendName}>
       <div>
@@ -26,7 +26,7 @@ let mapFriendsData = sixFriendsData.map(data =>
         {data.friendName}
       </div>
     </NavLink>
-  </>
+  </div>
 )
 
 

@@ -1,21 +1,9 @@
 import React, {useState} from "react"
 import style from "./Messages.module.css"
-import {Dialogs} from "./Dialogs/Dialogs"
-import {ChatsAll} from "./ChatsAll/ChatsAll"
-import searchIcon from "../img/icons/magnifying-glass.png"
-import {dialogsData, friendsData, messagesData} from "../../Store/State"
+import {Message} from "./Message/Message"
+import {messagesData} from "../../Store/State"
 import {Search} from "../../Functions/Search"
 
-
-
-let dialogsDataMap = dialogsData.map(data =>
-  <Dialogs key={data.id}
-           id={data.id}
-           name={data.name}
-           time={data.time}
-           message={data.message}
-  />
-)
 
 export function Messages() {
 
@@ -30,25 +18,21 @@ export function Messages() {
   }
 
   let messagesDataMap = messages.map(data =>
-    <ChatsAll key={data.id}
-              id={data.id}
-              time={data.time}
-              friendName={data.friendName}
-              avatarSrc={data.avatarSrc}
-              lastMessage={data.lastMessage}
+    <Message key={data.id}
+             id={data.id}
+             time={data.time}
+             friendName={data.friendName}
+             avatarSrc={data.avatarSrc}
+             lastMessage={data.lastMessage}
     />
   )
 
   return (
     <div className={`${style.Messages}`}>
+      <Search onSearch={onSearch}/>
 
-      <div className={`${style.search}`}>
-        <div className={`${style.searchWindow}`}>
-          <img src={searchIcon} alt="icon"/>
-          <Search onSearch={onSearch}/>
-        </div>
-      </div>
-        {messagesDataMap}
+      {messagesDataMap}
+
     </div>
   )
 }

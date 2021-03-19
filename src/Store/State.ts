@@ -105,6 +105,11 @@ function randomTime() {
 
 
 // OLD DATA
+export let postData: Array<postDataType> = [
+  {id: v1(), message: "Hello!", likesCount: 11},
+  {id: v1(), message: "It's my first post!", likesCount: 33},
+  {id: v1(), message: "I like XXI net!", likesCount: 40},
+]
 export let friendsData: Array<friendDataType> = [
   {id: v1(), friendName: "Andrew", avatarSrc: man_1},
   {id: v1(), friendName: "Alex", avatarSrc: man_2},
@@ -115,24 +120,8 @@ export let friendsData: Array<friendDataType> = [
   {id: v1(), friendName: "John", avatarSrc: man_3},
   {id: v1(), friendName: "Elena", avatarSrc: girl_3},
 ]
-export let postData: Array<postDataType> = [
-  {id: v1(), message: "Hello!", likesCount: 11},
-  {id: v1(), message: "It's my first post!", likesCount: 33},
-  {id: v1(), message: "I like XXI net!", likesCount: 40},
-]
 export let messagesData: Array<messageDataType> = [
   {id: v1(), friendName: "Denis", time: randomTime(), avatarSrc: man_5, lastMessage: "Hi, my friends!"},
   {id: v1(), friendName: "Alex", time: randomTime(), avatarSrc: man_2, lastMessage: "Nice to meet you!"},
   {id: v1(), friendName: "Nastya", time: randomTime(), avatarSrc: girl_1, lastMessage: "How are you, my friends?"},
-]
-export type dialogsDataType = {
-  id: string
-  name: string
-  time: string
-  message: string
-}
-export let dialogsData: Array<dialogsDataType> = [
-  {id: v1(), name: "Denis", time: randomTime(), message: "Hi, my friends!"},
-  {id: v1(), name: "Alex", time: randomTime(), message: "Nice to meet you!"},
-  {id: v1(), name: "Nastya", time: randomTime(), message: "How are you, my friends?"},
 ]

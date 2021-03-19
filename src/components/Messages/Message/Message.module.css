@@ -1,8 +1,8 @@
-.ChatsAll > a {
+.Message > a {
     text-decoration: none;
 }
 
-.Chats {
+.MessageItem {
     display: flex;
     align-items: center;
     width: 552px;
@@ -14,24 +14,24 @@
     border-bottom: 1px solid #e7e8ec;
 }
 
-.Chats img {
+.MessageItem img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
 
-.Chats:hover {
+.MessageItem:hover {
     color: black;
     font-weight: 400;
     background-color: #f0f2f5;
     cursor: pointer;
 }
 
-.ChatsAvatar {
+.MessageAvatar {
     padding: 11px 14px 8px 0;
 }
 
-.ChatsTitle {
+.MessageTitle {
     width: 450px;
     padding: 10px 0;
     display: flex;
@@ -46,11 +46,11 @@
     font-weight: 600;
 }
 
-.ChatsTime {
+.MessageTime {
     color: #939393;
     font-weight: 400;
 }
 
-.ChatsLastMessage {
+.LastMessage {
     color: #4e5966;
 }

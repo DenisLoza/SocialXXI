@@ -1,11 +1,10 @@
 .SubFriends {
     min-height: 153px;
+    padding: 6px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     text-align: start;
-    margin-top: 15px;
-    padding: 6px 0;
     background-color: rgb(255, 255, 255);
     border-radius: 4px;
     box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;

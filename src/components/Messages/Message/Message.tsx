@@ -1,35 +1,39 @@
-import style from "./ChatsAll.module.css"
+import style from "./Message.module.css"
 import {NavLink} from "react-router-dom"
 import React from "react"
 import {messageDataType} from "../../../Store/State"
 
 
+export function Message(props: messageDataType) {
 
-export function ChatsAll(props: messageDataType) {
+  let path = "/dialog/" + props.friendName
 
-  let path = "/im/" + props.friendName
+  const toDialogs = () => {
+
+  }
 
   return (
-    <div className={`${style.ChatsAll}`}>
+    <div className={`${style.Message}`}>
       <NavLink activeClassName={style.active}
                to={path}>
 
-        <div className={style.Chats}>
+        <div className={style.MessageItem}
+             onClick={toDialogs}>
 
-          <div className={`${style.ChatsAvatar}`}>
+          <div className={`${style.MessageAvatar}`}>
             <img src={props.avatarSrc} alt="avatar"/>
           </div>
 
-          <div className={`${style.ChatsTitle}`}>
+          <div className={`${style.MessageTitle}`}>
             <div className={`${style.friendName}`}>
               <div>
                 {props.friendName}
               </div>
-              <div className={`${style.ChatsTime}`}>
+              <div className={`${style.MessageTime}`}>
                 {props.time}
               </div>
             </div>
-            <div className={`${style.ChatsLastMessage}`}>
+            <div className={`${style.LastMessage}`}>
               {props.lastMessage}
             </div>
           </div>

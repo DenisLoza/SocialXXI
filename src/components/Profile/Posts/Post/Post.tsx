@@ -1,11 +1,12 @@
 import React from "react"
 import style from "./Post.module.css"
-import avatar_man from "../../img/avatars/man_5.jpg"
-import like from "../../img/icons/heart.png"
-import {postDataType} from "../../../Store/State"
+import avatar_man from "../../../img/avatars/man_5.jpg"
+import like from "../../../img/icons/heart.png"
+import {postDataType} from "../../../../Store/State"
 
 
 export function Post(props: postDataType) {
+
   let message = props.message
   let likesCount = props.likesCount
 

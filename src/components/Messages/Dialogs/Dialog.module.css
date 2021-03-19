@@ -1,0 +1,53 @@
+.Dialog_wrap {
+    width: 542px;
+    min-height: 52px;
+    margin: 4px;
+    padding: 6px 28px 7px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.DialogAvatar {
+    width: 78px;
+    display: flex;
+    justify-content: flex-end;
+}
+.DialogAvatar img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.DialogItem {
+    width: 387px;
+    margin-left: 6px;
+    display: flex;
+    flex-direction: column;
+}
+.DialogItemTitle {
+    display: flex;
+}
+.ItemTitleName {
+    max-width: 240px;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1.23;
+    color: #2a5885;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none;
+}
+.ItemTitleTime {
+    margin-left: 4px;
+    font-weight: 400;
+    color: #939393;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.ItemMessage {
+    word-wrap: break-word;
+}
+.DialogStar {
+    width: 50px;
+}
