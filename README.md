@@ -1,4 +1,7 @@
 # SocialNet project
+
+## [View The App](https://denisloza.github.io/SocialXXI/)
+
 ### implemented demo limited functionality of the main page of the user and the messages page. Design similar to VKontakte.
 ### Implemented functionality:
  - post a message to the main page
