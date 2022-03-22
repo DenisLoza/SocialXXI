@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/SocialXXI/static/css/main.28d2297c.css",
+    "main.js": "/SocialXXI/static/js/main.c02dd3cc.js",
+    "static/js/787.379d74b5.chunk.js": "/SocialXXI/static/js/787.379d74b5.chunk.js",
+    "static/media/man_4.jpg": "/SocialXXI/static/media/man_4.335e246aa5589ac25f60.jpg",
+    "static/media/man_5.jpg": "/SocialXXI/static/media/man_5.2665a6bc7ea9909677e5.jpg",
+    "static/media/girl_1.jpg": "/SocialXXI/static/media/girl_1.e97bcb63ea8ba9faca73.jpg",
+    "static/media/man_3.jpg": "/SocialXXI/static/media/man_3.d6b5ff5153aa88b5bd9a.jpg",
+    "static/media/girl_2.jpg": "/SocialXXI/static/media/girl_2.07506bd79dcf12362667.jpg",
+    "static/media/girl_3.jpg": "/SocialXXI/static/media/girl_3.f39b973dfeea9b08db11.jpg",
+    "static/media/girl_4.jpg": "/SocialXXI/static/media/girl_4.7e3d4396f274b4dfdf24.jpg",
+    "static/media/man_2.jpg": "/SocialXXI/static/media/man_2.0d320bddf39710483c32.jpg",
+    "static/media/man_1.jpg": "/SocialXXI/static/media/man_1.70d59cc5453103230c3e.jpg",
+    "static/media/profile_avatar.jpg": "/SocialXXI/static/media/profile_avatar.bbc4f143803db1d3bb0f.jpg",
+    "static/media/heart.png": "/SocialXXI/static/media/heart.da0501c73a47c0793bd4.png",
+    "static/media/userCircle.png": "/SocialXXI/static/media/userCircle.10dad669e91f8b4a3c1b.png",
+    "index.html": "/SocialXXI/index.html",
+    "main.28d2297c.css.map": "/SocialXXI/static/css/main.28d2297c.css.map",
+    "main.c02dd3cc.js.map": "/SocialXXI/static/js/main.c02dd3cc.js.map",
+    "787.379d74b5.chunk.js.map": "/SocialXXI/static/js/787.379d74b5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.28d2297c.css",
+    "static/js/main.c02dd3cc.js"
+  ]
+}
